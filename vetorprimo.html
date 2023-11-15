@@ -13,7 +13,7 @@
     Digite os valores a serem inseridos na lista: <input type="number" name="txtnumero" id="txtnumero"> 
     <br>
     <br>
-    <input type="button" value="Criar lista." onclick="criarLista()">
+    <input type="button" value="Criar lista." onclick="calcularPrimo()">
     <div id="res">
     </div>
  
@@ -24,6 +24,23 @@
             var num =Number(txtnum.value)
             var res = window.document.getElementById('res')
 
+            //--------------------------
+//coloca um vetor com 100 números todos com valor false. 
+            var vetorprimo = []
+            for (var j = 0; j < num; j++){
+                vetorprimo.push(false)
+            }
+//multiplica um número por outro mudando o valor para true quando alguma mútiplicação der o valor dele. 
+//console.log(vetorprimo)
+            for (var j = 2; j < num; j++){
+            for (var i = 2; i < num; i++){
+    //console.log(vetorbool[i])
+                var m = i * j;
+                vetorprimo[m]="true"
+                }
+            }
+            //--------------------------
+
             var vetor1 = []
 
                 vetor1.push(false)
@@ -32,8 +49,7 @@
             for (var i = 1; i <= num; i++){
                 if (vetorprimo[i] == "true") {
                     res.innerHTML += `<p style="color:green"> O número ${i} Não é Primo.</p>`
-            }
-            else {
+            } else {
                 res.innerHTML += `<p style="color:red"> O número ${i} é Primo.</p>`
             }
         }

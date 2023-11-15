@@ -24,5 +24,3 @@ if (vetorprimo[i] == "true") {
         console.log(`o número ${i} é primo.`)
     }
 }
-
-
